@@ -30,6 +30,8 @@ namespace SSHotelApp.WebApi
             builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
             builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 
+            builder.Services.AddAutoMapper(typeof(Program));
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
