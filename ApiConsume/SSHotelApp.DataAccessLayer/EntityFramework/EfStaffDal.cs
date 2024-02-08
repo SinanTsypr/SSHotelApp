@@ -1,4 +1,5 @@
 ﻿using SSHotelApp.DataAccessLayer.Abstract;
+using SSHotelApp.DataAccessLayer.Concrete;
 using SSHotelApp.DataAccessLayer.Repositories;
 using SSHotelApp.EntityLayer.Concrete;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSHotelApp.DataAccessLayer.Concrete
+namespace SSHotelApp.DataAccessLayer.EntityFramework
 {
     public class EfStaffDal : GenericRepository<Staff>, IStaffDal
     {
