@@ -20,7 +20,7 @@ namespace SSHotelApp.WebApi.Controllers
         public IActionResult ServiceList()
         {
             var values = _serviceService.TGetList();
-            return Ok();
+            return Ok(values);
         }
 
         [HttpPost]

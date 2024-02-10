@@ -16,6 +16,7 @@ namespace SSHotelApp.DataAccessLayer.Concrete
         public DbSet<Staff> Staffs => Set<Staff>();
         public DbSet<Subscribe> Subscribes => Set<Subscribe>();
         public DbSet<Testimonial> Testimonials => Set<Testimonial>();
+        public DbSet<AboutUs> AboutUss => Set<AboutUs>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

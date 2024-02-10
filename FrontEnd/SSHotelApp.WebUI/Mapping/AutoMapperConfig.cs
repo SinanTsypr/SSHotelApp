@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using SSHotelApp.EntityLayer.Concrete;
+using SSHotelApp.WebUI.Dtos.AboutDto;
 using SSHotelApp.WebUI.Dtos.LoginDto;
 using SSHotelApp.WebUI.Dtos.RegisterDto;
 using SSHotelApp.WebUI.Dtos.ServiceDto;
+using SSHotelApp.WebUI.Dtos.SubscribeDto;
 
 namespace SSHotelApp.WebUI.Mapping
 {
@@ -17,6 +19,11 @@ namespace SSHotelApp.WebUI.Mapping
             CreateMap<CreateNewUserDto, AppUser>();
 
             CreateMap<LoginUserDto, AppUser>();
+
+            CreateMap<ResultAboutUsDto, AboutUs>();
+            CreateMap<UpdateAboutUsDto, AboutUs>();
+
+            CreateMap<CreateSubscribeDto, Subscribe>();
         }
     }
 }

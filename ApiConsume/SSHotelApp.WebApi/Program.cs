@@ -30,6 +30,9 @@ namespace SSHotelApp.WebApi
             builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
             builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 
+            builder.Services.AddScoped<IAboutUsDal, EfAboutUsDal>();
+            builder.Services.AddScoped<IAboutUsService, AboutUsManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddControllers();
