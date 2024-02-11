@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SSHotelApp.EntityLayer.Concrete;
 using SSHotelApp.WebUI.Dtos.AboutDto;
+using SSHotelApp.WebUI.Dtos.BookingDto;
 using SSHotelApp.WebUI.Dtos.LoginDto;
 using SSHotelApp.WebUI.Dtos.RegisterDto;
 using SSHotelApp.WebUI.Dtos.ServiceDto;
@@ -24,6 +25,9 @@ namespace SSHotelApp.WebUI.Mapping
             CreateMap<UpdateAboutUsDto, AboutUs>();
 
             CreateMap<CreateSubscribeDto, Subscribe>();
+
+            CreateMap<CreateBookingDto, Booking>();
+            CreateMap<ApproveBookingDto, Booking>();
         }
     }
 }
