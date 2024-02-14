@@ -2,6 +2,7 @@
 using SSHotelApp.EntityLayer.Concrete;
 using SSHotelApp.WebUI.Dtos.AboutDto;
 using SSHotelApp.WebUI.Dtos.BookingDto;
+using SSHotelApp.WebUI.Dtos.ContactDto;
 using SSHotelApp.WebUI.Dtos.LoginDto;
 using SSHotelApp.WebUI.Dtos.RegisterDto;
 using SSHotelApp.WebUI.Dtos.ServiceDto;
@@ -28,6 +29,8 @@ namespace SSHotelApp.WebUI.Mapping
 
             CreateMap<CreateBookingDto, Booking>();
             CreateMap<ApproveBookingDto, Booking>();
+
+            CreateMap<CreateContactDto, Contact>();
         }
     }
 }

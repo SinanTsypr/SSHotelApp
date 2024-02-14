@@ -3,9 +3,6 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-<html lang="en">
-
 @await Component.InvokeAsync("_HeadPartial")
 
 <body>
@@ -17,10 +14,10 @@
         @await Component.InvokeAsync("_NavbarPartial")
         <!-- Header End -->
         <!-- Page Header Start -->
-        @await Component.InvokeAsync("_BookingCoverPartial")
+        @await Component.InvokeAsync("_ContactCoverPartial")
         <!-- Page Header End -->
         <!-- Booking Start -->
-        @await Html.PartialAsync("/Views/Booking/AddBooking.cshtml")
+        @await Html.PartialAsync("/Views/Contact/SendMessage.cshtml")
         <!-- Booking End -->
         <!-- Newsletter Start -->
         @await Html.PartialAsync("/Views/Default/_SubscribePartial.cshtml")
