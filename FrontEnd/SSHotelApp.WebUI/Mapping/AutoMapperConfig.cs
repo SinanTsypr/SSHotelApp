@@ -3,8 +3,10 @@ using SSHotelApp.EntityLayer.Concrete;
 using SSHotelApp.WebUI.Dtos.AboutDto;
 using SSHotelApp.WebUI.Dtos.BookingDto;
 using SSHotelApp.WebUI.Dtos.ContactDto;
+using SSHotelApp.WebUI.Dtos.GuestDto;
 using SSHotelApp.WebUI.Dtos.LoginDto;
 using SSHotelApp.WebUI.Dtos.RegisterDto;
+using SSHotelApp.WebUI.Dtos.RoomDto;
 using SSHotelApp.WebUI.Dtos.ServiceDto;
 using SSHotelApp.WebUI.Dtos.SubscribeDto;
 
@@ -31,6 +33,13 @@ namespace SSHotelApp.WebUI.Mapping
             CreateMap<ApproveBookingDto, Booking>();
 
             CreateMap<CreateContactDto, Contact>();
+
+            CreateMap<CreateRoomDto, Room>();
+            CreateMap<UpdateRoomDto, Room>();
+            CreateMap<ResultRoomDto, Room>();
+
+            CreateMap<CreateGuestDto, Guest>();
+            CreateMap<UpdateGuestDto, Guest>();
         }
     }
 }
