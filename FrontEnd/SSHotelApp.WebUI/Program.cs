@@ -1,5 +1,7 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using SSHotelApp.DataAccessLayer.Concrete;
 using SSHotelApp.EntityLayer.Concrete;
 using SSHotelApp.WebUI.Dtos.GuestDto;
@@ -15,9 +17,23 @@ namespace SSHotelApp.WebUI
 
             // Add services to the container.
             builder.Services.AddDbContext<Context>();
-            builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 
             builder.Services.AddAutoMapper(typeof(Program));
+            builder.Services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            builder.Services.ConfigureApplicationCookie(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+                opt.LoginPath = "/Login/Index";
+            });
 
             builder.Services.AddHttpClient();
 
@@ -36,16 +52,18 @@ namespace SSHotelApp.WebUI
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code{0}");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Default}/{action=Index}/{id?}");
 
             app.Run();
         }
