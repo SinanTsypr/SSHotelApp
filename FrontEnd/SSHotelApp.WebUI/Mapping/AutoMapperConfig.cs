@@ -21,7 +21,6 @@ namespace SSHotelApp.WebUI.Mapping
             CreateMap<UpdateServiceDto, Service>();
 
             CreateMap<CreateNewUserDto, AppUser>();
-
             CreateMap<LoginUserDto, AppUser>();
 
             CreateMap<ResultAboutUsDto, AboutUs>();

@@ -33,6 +33,12 @@ namespace SSHotelApp.BusinessLayer.Concrete
             return _sendMessageDal.GetList();
         }
 
+        public int TGetSendMessageCount()
+        {
+            var values = _sendMessageDal.GetSendMessageCount();
+            return values;
+        }
+
         public void TInsert(SendMessage t)
         {
             _sendMessageDal.Insert(t);

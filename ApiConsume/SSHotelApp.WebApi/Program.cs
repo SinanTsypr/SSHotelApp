@@ -45,6 +45,15 @@ namespace SSHotelApp.WebApi
             builder.Services.AddScoped<ISendMessageDal, EfSendMessageDal>();
             builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
 
+            builder.Services.AddScoped<IMessageCategoryDal, EfMessageCategoryDal>();
+            builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
+
+            builder.Services.AddScoped<IWorkLocationDal, EfWorkLocationDal>();
+            builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
+
+            builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+            builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddControllers();
@@ -61,6 +70,8 @@ namespace SSHotelApp.WebApi
                     .AllowAnyMethod();
                 });
             });
+
+            builder.Services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             var app = builder.Build();
 

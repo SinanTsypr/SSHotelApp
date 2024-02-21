@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SSHotelApp.EntityLayer.Concrete;
+using SSHotelApp.WebUI.Constants;
 using SSHotelApp.WebUI.Dtos.RegisterDto;
 
 namespace SSHotelApp.WebUI.Controllers
@@ -35,7 +36,10 @@ namespace SSHotelApp.WebUI.Controllers
                 Name = createNewUserDto.Name,
                 Email = createNewUserDto.Mail,
                 SurName = createNewUserDto.SurName,
-                UserName = createNewUserDto.Username
+                UserName = createNewUserDto.Username,
+                City = "Ankara",
+                WorkLocationId = RandomNumberGenerator.Generator(),
+                ImageUrl = $"/adminweb/images/avatar/{RandomNumberGenerator.Generator()}.jpg"
             };
 
             var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);

@@ -1,4 +1,5 @@
-﻿using SSHotelApp.EntityLayer.Concrete;
+﻿using SSHotelApp.DataAccessLayer.Concrete;
+using SSHotelApp.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace SSHotelApp.BusinessLayer.Abstract
 {
     public interface IContactService : IGenericService<Contact>
     {
+        public int TGetContactCount();
     }
 }

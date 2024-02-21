@@ -21,6 +21,8 @@ namespace SSHotelApp.DataAccessLayer.Concrete
         public DbSet<Guest> Guests => Set<Guest>();
         public DbSet<Contact> Contacts => Set<Contact>();
         public DbSet<SendMessage> SendMessages => Set<SendMessage>();
+        public DbSet<MessageCategory> MessageCategories => Set<MessageCategory>();
+        public DbSet<WorkLocation> WorkLocations => Set<WorkLocation>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
