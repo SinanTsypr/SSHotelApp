@@ -1,0 +1,14 @@
+﻿@model SSHotelApp.WebUI.Models.Role.AddRoleViewModel
+
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Misafir Adı</label>
+    <input type="text" asp-for="RoleName" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Rol Ekle</button>
+    <br />
+</form>
