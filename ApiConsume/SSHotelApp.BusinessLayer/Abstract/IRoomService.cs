@@ -9,5 +9,6 @@ namespace SSHotelApp.BusinessLayer.Abstract
 {
     public interface IRoomService : IGenericService<Room>
     {
+        int TRoomCount();
     }
 }

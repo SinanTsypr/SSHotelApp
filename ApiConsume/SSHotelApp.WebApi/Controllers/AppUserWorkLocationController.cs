@@ -18,6 +18,7 @@ namespace SSHotelApp.WebApi.Controllers
             _appUserService = appUserService;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             //var values = _appUserService.TUsersListWithWorkLocations();

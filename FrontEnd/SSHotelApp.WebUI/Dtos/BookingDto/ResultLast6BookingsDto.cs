@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SSHotelApp.EntityLayer.Concrete
+﻿namespace SSHotelApp.WebUI.Dtos.BookingDto
 {
-    public class Booking
+    public class ResultLast6BookingsDto
     {
         public int BookingId { get; set; }
         public string Name { get; set; } = null!;

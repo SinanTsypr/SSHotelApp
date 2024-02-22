@@ -1,0 +1,104 @@
+﻿@model List<ResultSocialMediaDto>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-facebook">
+                <span class="s-icon"><i class="fa fa-facebook"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        <h4 class="m-1">64</h4>
+                        <p class="m-0">Friends</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        <h4 class="m-1">19</h4>
+                        <p class="m-0">Followers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-linkedin">
+                <span class="s-icon"><i class="fa fa-linkedin"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        <h4 class="m-1">89</h4>
+                        <p class="m-0">Friends</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        <h4 class="m-1">119</h4>
+                        <p class="m-0">Followers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @foreach (var item in Model)
+    {
+        if (item.instagramDto != null)
+        {
+            foreach (var instagramData in item.instagramDto)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card">
+                        <div class="social-graph-wrapper widget-googleplus">
+                            <span class="s-icon"><i class="fa fa-google-plus"></i></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 border-right">
+                                <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                    <h4 class="m-1">@instagramData.following_count</h4>
+                                    <p class="m-0">Friends</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                    <h4 class="m-1">@instagramData.follower_count</h4>
+                                    <p class="m-0">Followers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+
+    @foreach (var item in Model)
+    {
+        if (item.twitterDto != null)
+        {
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="social-graph-wrapper widget-twitter">
+                        <span class="s-icon"><i class="fa fa-twitter"></i></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 border-right">
+                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                <h4 class="m-1">@item.twitterDto.result.data.user.result.legacy.friends_count</h4>
+                                <p class="m-0">Friends</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                <h4 class="m-1">@item.twitterDto.result.data.user.result.legacy.favourites_count</h4>
+                                <p class="m-0">Followers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
