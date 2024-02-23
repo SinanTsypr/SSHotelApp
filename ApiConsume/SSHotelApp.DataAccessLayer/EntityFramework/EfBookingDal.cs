@@ -33,6 +33,30 @@ namespace SSHotelApp.DataAccessLayer.EntityFramework
             context.SaveChanges();
         }
 
+        public void BookingStatusChangeApproved3(int id)
+        {
+            var context = new Context();
+            var values = context.Bookings.Find(id);
+            values.Status = "Onaylandı";
+            context.SaveChanges();
+        }
+
+        public void BookingStatusChangePending(int id)
+        {
+            var context = new Context();
+            var values = context.Bookings.Find(id);
+            values.Status = "Onay Bekliyor";
+            context.SaveChanges();
+        }
+
+        public void BookingStatusChangeReject(int id)
+        {
+            var context = new Context();
+            var values = context.Bookings.Find(id);
+            values.Status = "Reddedildi";
+            context.SaveChanges();
+        }
+
         public int GetBookingCount()
         {
             var context = new Context();

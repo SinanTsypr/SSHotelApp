@@ -28,6 +28,21 @@ namespace SSHotelApp.BusinessLayer.Concrete
             _bookingDal.BookingStatusChangeApproved2(id);
         }
 
+        public void TBookingStatusChangeApproved3(int id)
+        {
+            _bookingDal.BookingStatusChangeApproved3(id);
+        }
+
+        public void TBookingStatusChangePending(int id)
+        {
+            _bookingDal.BookingStatusChangePending(id);
+        }
+
+        public void TBookingStatusChangeReject(int id)
+        {
+            _bookingDal.BookingStatusChangeReject(id);
+        }
+
         public void TDelete(Booking t)
         {
             _bookingDal.Delete(t);

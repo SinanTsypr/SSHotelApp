@@ -72,5 +72,26 @@ namespace SSHotelApp.WebApi.Controllers
             var values = _bookingService.TLast6Bookings();
             return Ok(values);
         }
+
+        [HttpGet("BookingApproved")]
+        public IActionResult BookingApproved(int id)
+        {
+            _bookingService.TBookingStatusChangeApproved3(id);
+            return Ok();
+        }
+
+        [HttpGet("BookingRejected")]
+        public IActionResult BookingRejected(int id)
+        {
+            _bookingService.TBookingStatusChangeReject(id);
+            return Ok();
+        }
+
+        [HttpGet("BookingPending")]
+        public IActionResult BookingPending(int id)
+        {
+            _bookingService.TBookingStatusChangePending(id);
+            return Ok();
+        }
     }
 }

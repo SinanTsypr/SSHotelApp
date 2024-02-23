@@ -13,5 +13,9 @@ namespace SSHotelApp.BusinessLayer.Abstract
         void TBookingStatusChangeApproved2(int id);
         int TGetBookingCount();
         List<Booking> TLast6Bookings();
+        void TBookingStatusChangeApproved3(int id);
+        void TBookingStatusChangeReject(int id);
+        void TBookingStatusChangePending(int id);
+
     }
 }
