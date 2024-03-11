@@ -32,6 +32,8 @@ namespace SSHotelApp.WebUI.Controllers
         {
             createBookingDto.Status = "Onay Bekliyor";
             createBookingDto.Description = string.Empty;
+            createBookingDto.City = string.Empty;
+            createBookingDto.Country = string.Empty;
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
