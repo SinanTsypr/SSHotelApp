@@ -6,6 +6,7 @@
     int count = 0;
 }
 
+
 <h2>Rezervasyonlar</h2>
 
 <div class="card-title">
@@ -32,13 +33,31 @@
             {
                 count++;
                 <tr>
+                    @{
+                        string badgeClass = "";
+                        switch (item.Status)
+                        {
+                            case "Onaylandı":
+                                badgeClass = "badge-success";
+                                break;
+                            case "Reddedildi":
+                                badgeClass = "badge-danger";
+                                break;
+                            case "Onay Bekliyor":
+                                badgeClass = "badge-info";
+                                break;
+                            default:
+                                badgeClass = "badge-dark";
+                                break;
+                        }
+                    }
                     @*<input type="hidden" asp-for="@item.BookingId" />*@
                     <th>@count</th>
                     <td>@item.Name</td>
                     <td>@item.CheckIn.ToShortDateString()</td>
                     <td>@item.CheckOut.ToShortDateString()</td>
                     <td>
-                        <span class="badge badge-primary px-2">@item.Status</span>
+                        <span class="badge @badgeClass px-2">@item.Status</span>
                     </td>
                     <td><a href="/BookingAdmin/ApprovedBooking2/@item.BookingId" class="btn btn-outline-primary">Onayla</a></td>
                     <td><a href="/BookingAdmin/RejectedBooking/@item.BookingId" class="btn btn-outline-danger">İptal Et</a></td>

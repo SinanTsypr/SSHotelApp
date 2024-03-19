@@ -27,7 +27,7 @@ namespace SSHotelApp.WebUI.ViewComponents.Dashboard
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://twitter241.p.rapidapi.com/user?username=sinantasyapar"),
+                RequestUri = new Uri("https://twitter241.p.rapidapi.com/user?username=MrBeast"),
                 Headers =
                     {
                         { "X-RapidAPI-Key", "db7426085amsh6a5d8b0152ec77ap18fb65jsnbdc7e43aa5db" },
